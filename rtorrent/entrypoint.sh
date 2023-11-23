@@ -2,10 +2,10 @@
 echo "Deleting locks"
 rm -rf /config/.local/share/rtorrent/.session/rtorrent.lock /config/.local/share/rtorrent/.session/rtorrent.pid
 
-if [[ ! -z "$DNS_SERVER" ]]
+if [[ ! -z "$DNS_SERVERS" ]]
 then
-    echo "Setting DNS server to $DNS_SERVER"
-    echo "nameserver $DNS_SERVER" > /etc/resolv.conf
+    echo "Setting DNS server(s) to $DNS_SERVERS"
+    echo $DNS_SERVERS | tr ',' '\n' | while read server; do echo "nameserver $server"; done > /etc/resolv.conf
 fi
 
 if [[ ! -z "$DEFAULT_GATEWAY" ]]

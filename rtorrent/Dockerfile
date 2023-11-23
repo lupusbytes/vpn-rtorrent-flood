@@ -7,7 +7,7 @@ ENV MOUNT=/config
 
 # Optional ENV's
 ENV DEFAULT_GATEWAY=
-ENV DNS_SERVER=
+ENV DNS_SERVERS=
 
 # Add mounting endpoint for data
 RUN apk add rtorrent
