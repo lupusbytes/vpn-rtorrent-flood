@@ -3,6 +3,8 @@ name: rtorrent-release-please
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - rtorrent/**
 
 permissions:
   contents: write
