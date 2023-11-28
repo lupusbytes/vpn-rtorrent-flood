@@ -1,0 +1,28 @@
+name: rtorrent-release-please
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: release-please
+        id: release
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: release
+          path: rtorrent
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          pull-request-title-pattern: "chore(rtorrent): release version ${version}"
+          token: ${{ secrets.PAT }}
