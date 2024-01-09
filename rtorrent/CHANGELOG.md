@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/v1.1.1...v1.1.2) (2024-01-09)
+
+
+### Bug Fixes
+
+* **rtorrent:** update alpine image to 3.18.5 ([b629c54](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/b629c54413cc82736132dc5a23879e7d0b1a90ce))
+
 ## 1.0.0 (2023-11-28)
 
 
