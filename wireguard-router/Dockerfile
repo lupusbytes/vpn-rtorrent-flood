@@ -1,4 +1,4 @@
-FROM alpine:3.18.4
+FROM alpine:3.18.5
 
 ENV DNS_SERVERS=1.1.1.1
 
