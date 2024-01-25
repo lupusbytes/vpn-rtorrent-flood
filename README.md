@@ -1,6 +1,6 @@
 # vpn-rtorrent-flood
-![Diagram of service communication](docs/service-diagram-dark-theme.png#gh-dark-mode-only)
-![Diagram of service communication](docs/service-diagram-light-theme.png#gh-light-mode-only)
+![Diagram of service communication](diagrams/service-diagram-dark-theme.png#gh-dark-mode-only)
+![Diagram of service communication](diagrams/service-diagram-light-theme.png#gh-light-mode-only)
 
 This project aims to provide a minimalistic way to run [WireGuard](https://www.wireguard.com/), [rTorrent](https://github.com/rakshasa/rtorrent), and [Flood](https://github.com/jesec/flood) in cohesive Docker containers, with a seperation of concerns.
 
