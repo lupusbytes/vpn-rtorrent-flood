@@ -15,6 +15,7 @@ This project aims to provide a minimalistic way to run [WireGuard](https://www.w
 [WireGuard](https://www.wireguard.com/) is a modern, efficient, and secure open-source VPN protocol known for its simplicity and high performance. It offers strong encryption, kernel integration for speed, and cross-platform support.
 
 ## Docker Compose example
+See also [the full example](example/)
 ```
 version: '3'
 services:
