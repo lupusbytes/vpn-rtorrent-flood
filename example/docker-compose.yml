@@ -1,0 +1,67 @@
+version: '3'
+services:
+  wireguard:
+    container_name: wireguard-router
+    image: ghcr.io/lupusbytes/wireguard-router:latest
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - PORTFORWARD_PORT=45000
+      - PORTFORWARD_IPADDRESS=172.20.0.3
+    volumes:
+      - ./wgtorrent.conf:/etc/wireguard/wg0.conf
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: always
+    networks:
+      torrentnet:
+        ipv4_address: 172.20.0.2
+
+  rtorrent:
+    container_name: rtorrent
+    image: ghcr.io/lupusbytes/rtorrent:latest
+    depends_on:
+      - wireguard
+    cap_add:
+      - NET_ADMIN
+    logging:
+      driver: none
+    volumes:
+      - ./data:/data
+    environment:
+      - DEFAULT_GATEWAY=172.20.0.2
+      - DNS_SERVERS=1.1.1.1
+      - INCOMING_PORT=45000
+    restart: always
+    stdin_open: true
+    tty: true
+    networks:
+      torrentnet:
+        ipv4_address: 172.20.0.3
+
+  flood:
+    image: jesec/flood:latest
+    container_name: flood
+    user: "1000:1000"
+    depends_on:
+      - rtorrent
+    command:
+      - --allowed-path /data
+    volumes:
+      - ./flood:/config
+      - ./data:/data
+    environment:
+      - HOME=/config
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      torrentnet:
+        ipv4_address: 172.20.0.4
+
+networks:
+  torrentnet:
+    ipam:
+      config:
+      - subnet: 172.20.0.0/29
