@@ -84,3 +84,53 @@ networks:
       config:
       - subnet: 172.20.0.0/29
 ```
+## Docker images
+## WireGuard router
+### Image
+* `ghcr.io/lupusbytes/wireguard-router`
+### Environment variables
+* `DNS_SERVERS`: Comma seperated list of DNS servers to use. (default `1.1.1.1`)
+* `PORTFORWARD_PORT`: Port forward a single TCP port through the WireGuard tunnel.
+* `PORTFORWARD_IPADDRESS`: Destination IP address of `PORTFORWARD_PORT`.
+
+### Volumes
+* `/etc/wireguard/wg0.conf`: Required wireguard config for the router to use.
+
+### Permissions
+When running a container based on this image, the follow system capabilities are nescessary:
+- `NET_ADMIN`
+- `SYS_MODULE`
+- `--sysctl net.ipv4.conf.all.src_valid_mark=1`
+
+### Note
+`PORTFORWARD_PORT` and `PORTFORWARD_IPADDRESS` variables can be used together to expose the rTorrent `INCOMING_PORT` to the internet.  
+This allows rTorrent to become "connectable".  
+Being connectable means that you can share data with everyone (be it seeding, or leeching).  
+Two unconnectable peers will not be able to communicate with one another.  
+Being connectable is not strictly necessary, but it is highly recommended. You can still download and (somewhat) seed while being unconnectable.
+
+## rTorrent
+### Image
+* `ghcr.io/lupusbytes/rtorrent`
+### Environment variables
+* `USER`: The username inside the container (default `rtorrent`)
+* `PUID`: rTorrent user id (default `1000`)
+* `PGID`: rTorrent group id (default `1000`)
+* `INCOMING_PORT`: Port number for incoming connections (`network.port_range.set`, default `50000`)
+* `DEFAULT_GATEWAY`: Allows for overriding the default gateway. Intended to be used for redirecting traffic to a VPN gateway.
+* `DNS_SERVERS`: Comma seperated list of DNS servers to use.
+
+### Volumes
+* `/data`: location for `downloads`, `log`, `session`, `watch`, `rtorrent.rc` and `rtorrent.sock`
+
+### Permissions
+When running a container based on this image, the follow system capabilities are nescessary:
+* `NET_ADMIN`
+
+### Note
+When overriding the `DEFAULT_GATEWAY`, the Docker host's DNS servers may not be reachable. Use `DNS_SERVERS` to select a DNS server that is reachable through the tunnel.
+
+## Flood
+### Image
+* `jesec/flood`
+#### Please refer to the docker compose example or [jesec/flood](https://github.com/jesec/flood)
