@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/v1.1.2...v1.2.0) (2024-04-08)
+
+
+### Features
+
+* **wireguard-router:** update alpine image to 3.19.1 ([cd05e6c](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/cd05e6c0552e0b5592be85e35df4f957ee385dc7))
+
 ## [1.1.1](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/v1.1.0...v1.1.1) (2024-01-09)
 
 
