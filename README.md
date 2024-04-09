@@ -60,7 +60,7 @@ services:
         ipv4_address: 172.20.0.3
 
   flood:
-    image: jesec/flood:latest
+    image: jesec/flood:master
     container_name: flood
     user: "1000:1000"
     depends_on:
@@ -104,10 +104,10 @@ When running a container based on this image, the follow system capabilities are
 - `--sysctl net.ipv4.conf.all.src_valid_mark=1`
 
 ### Note
-`PORTFORWARD_PORT` and `PORTFORWARD_IPADDRESS` variables can be used together to expose the rTorrent `INCOMING_PORT` to the internet.  
-This allows rTorrent to become "connectable".  
-Being connectable means that you can share data with everyone (be it seeding, or leeching).  
-Two unconnectable peers will not be able to communicate with one another.  
+`PORTFORWARD_PORT` and `PORTFORWARD_IPADDRESS` variables can be used together to expose the rTorrent `INCOMING_PORT` to the internet.
+This allows rTorrent to become "connectable".
+Being connectable means that you can share data with everyone (be it seeding, or leeching).
+Two unconnectable peers will not be able to communicate with one another.
 Being connectable is not strictly necessary, but it is highly recommended. You can still download and (somewhat) seed while being unconnectable.
 
 ## rTorrent

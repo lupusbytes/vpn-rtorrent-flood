@@ -41,7 +41,7 @@ services:
         ipv4_address: 172.20.0.3
 
   flood:
-    image: jesec/flood:latest
+    image: jesec/flood:master
     container_name: flood
     user: "1000:1000"
     depends_on:
