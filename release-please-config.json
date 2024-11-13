@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "4fe6fe598f0cc350e635e29953dc5cbbd1ac38c2",
+  "include-v-in-tag": true,
+  "include-component-in-tag": true,
+  "tag-separator": "@",
+  "separate-pull-requests": true,
+  "packages": {
+    "rtorrent": {
+      "component": "rtorrent",
+      "release-type": "simple",
+      "pull-request-title-pattern": "chore(rtorrent): release version ${version}"
+    },
+    "wireguard-router": {
+      "component": "wireguard-router",
+      "release-type": "simple",
+      "pull-request-title-pattern": "chore(wireguard-router): release version ${version}"
+    }
+  }
+}
