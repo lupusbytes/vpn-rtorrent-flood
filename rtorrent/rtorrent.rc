@@ -57,7 +57,7 @@ network.max_open_sockets.set = 300
 ## Memory resource usage (increase if you have a large number of items loaded,
 ## and/or the available resources to spend)
 pieces.memory.max.set = 1800M
-# network.xmlrpc.size_limit.set = 4M
+network.xmlrpc.size_limit.set = 8M
 
 
 ## Basic operational settings (no need to change these)
