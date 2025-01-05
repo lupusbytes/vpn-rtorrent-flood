@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.2...rtorrent@v1.4.3) (2025-01-05)
+
+
+### Bug Fixes
+
+* **rtorrent:** set default network.xmlrpc.size_limit to 8m ([b838fab](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/b838fab4090be762c83aa0b975660a3af3f3ad37)), closes [#30](https://github.com/lupusbytes/vpn-rtorrent-flood/issues/30)
+
 ## [1.4.2](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.1...rtorrent@v1.4.2) (2024-12-07)
 
 
