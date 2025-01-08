@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/wireguard-router@v1.5.2...wireguard-router@v1.5.3) (2025-01-08)
+
+
+### Upgrades
+
+* **deps:** update alpine docker tag to v3.21.1 ([7c5ba72](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/7c5ba72592283d0abef42ebf2b462e09711b3733))
+
 ## [1.5.2](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/wireguard-router@v1.5.1...wireguard-router@v1.5.2) (2024-12-07)
 
 
