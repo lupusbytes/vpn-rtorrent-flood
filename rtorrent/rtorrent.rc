@@ -24,6 +24,11 @@ execute.throw = sh, -c, (cat,\
     "\"",(cfg.watch),"/load\" ",\
     "\"",(cfg.watch),"/start\" ")
 
+## Needed for compatibility between Flood and upstream rTorrent:0.15.2
+method.redirect=load.throw,load.normal
+method.redirect=load.start_throw,load.start
+method.insert=d.down.sequential,value|const,0
+method.insert=d.down.sequential.set,value|const,0
 
 ## Tracker-less torrent and UDP tracker support
 ## (conservative settings for 'private' trackers, change for 'public')
