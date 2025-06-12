@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.8](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.7...rtorrent@v1.4.8) (2025-06-12)
+
+
+### Bug fixes
+
+* **rtorrent:** fix compatibility between flood:4.9.5 and rtorrent:0.15.2 [#48](https://github.com/lupusbytes/vpn-rtorrent-flood/issues/48) ([cce2f99](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/cce2f99f830b12ddd3dd502b1243cfbd58406d40))
+
 ## [1.4.7](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.6...rtorrent@v1.4.7) (2025-06-11)
 
 
