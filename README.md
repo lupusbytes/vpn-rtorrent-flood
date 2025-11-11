@@ -16,7 +16,7 @@ This project aims to provide a minimalistic way to run [WireGuard](https://www.w
 
 ## Docker Compose example
 See also [the full example](example/)
-```
+```yaml
 services:
   wireguard:
     container_name: wireguard-router
