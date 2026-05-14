@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.13](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.12...rtorrent@v1.4.13) (2026-05-14)
+
+
+### Upgrades
+
+* **deps:** update alpine docker tag to v3.23.4 ([8e2b9d2](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/8e2b9d274f523bbfeb8c2728b321cb153c404e50))
+
 ## [1.4.12](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.11...rtorrent@v1.4.12) (2026-02-15)
 
 
