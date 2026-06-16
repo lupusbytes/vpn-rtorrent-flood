@@ -1,4 +1,4 @@
-FROM alpine:3.23.4
+FROM alpine:3.24.1
 
 ENV USER=rtorrent
 ENV PUID=1000
