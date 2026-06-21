@@ -52,6 +52,9 @@ services:
       - DNS_SERVERS=1.1.1.1
       - INCOMING_PORT=45000
     restart: always
+    # On SIGTERM rTorrent announces "stopped" to every torrent's tracker.
+    # With many torrents this can take a while; give it room so Docker doesn't SIGKILL it (exit 137) mid-shutdown.
+    stop_grace_period: 120s
     stdin_open: true
     tty: true
     networks:
