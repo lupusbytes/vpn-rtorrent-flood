@@ -60,6 +60,8 @@ RUN apk add --no-cache \
     libstdc++ \
     ncurses \
     openssl \
+    su-exec \
+    tini \
     xmlrpc-c \
     zlib
 
@@ -80,4 +82,4 @@ RUN addgroup --gid "$PGID" "$USER" \
 
 COPY rtorrent.rc /etc/rtorrent/rtorrent.rc
 COPY entrypoint.sh /run/entrypoint.sh
-ENTRYPOINT /run/entrypoint.sh
+ENTRYPOINT ["/sbin/tini", "--", "/run/entrypoint.sh"]
