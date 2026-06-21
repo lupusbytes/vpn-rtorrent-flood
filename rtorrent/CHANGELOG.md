@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.14...rtorrent@v2.0.0) (2026-06-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove deprecated or removed commands and redirects from config
+* build rtorrent 0.16.14 from source
+
+### New features
+
+* use tini to init rtorrent ([6ca1cfb](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/6ca1cfb2b6d42f22581f239503fef83e19460076))
+
+
+### Bug fixes
+
+* build rtorrent 0.16.14 from source ([71b0b53](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/71b0b5342318ba0b002850eb62efc94054f867b3))
+* remove deprecated or removed commands and redirects from config ([b4becfd](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/b4becfdd4c7c0418953588f71c413e875557dc4d))
+
 ## [1.4.14](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.13...rtorrent@v1.4.14) (2026-06-16)
 
 
