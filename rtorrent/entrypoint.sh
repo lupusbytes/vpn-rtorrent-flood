@@ -30,4 +30,4 @@ fi
 chown "$PUID":"$PGID" /data/rtorrent.rc
 
 echo "Starting rTorrent as user: $USER"
-su "$USER" -c "rtorrent -D -o import=/data/rtorrent.rc -o system.daemon.set=true && sleep infinity"
+su "$USER" -c "rtorrent -o import=/data/rtorrent.rc -o system.daemon.set=true && sleep infinity"
