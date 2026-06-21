@@ -68,16 +68,9 @@ execute.nothrow = sh, -c, (cat, "echo >",\
 
 ## Other operational settings (check & adapt)
 system.umask.set = 0027
-#system.umask.set = 0022
 system.cwd.set = (directory.default)
 network.http.dns_cache_timeout.set = 25
 schedule = monitor_diskspace, 15, 60, ((close_low_diskspace, 1000M))
-#pieces.hash.on_completion.set = no
-#view.sort_current = seeding, greater=d.ratio=
-#keys.layout.set = qwerty
-#network.http.capath.set = "/etc/ssl/certs"
-#network.http.ssl_verify_peer.set = 0
-#network.http.ssl_verify_host.set = 0
 
 
 ## Some additional values and commands
@@ -91,14 +84,14 @@ method.insert = d.session_file, simple, "cat=(session.path), (d.hash), .torrent"
 
 ## Watch directories (add more as you like, but use unique schedule names)
 ## Add torrent
-schedule2 = watch_load, 11, 10, ((load.verbose, (cat, (cfg.watch), "load/*.torrent")))
+schedule = watch_load, 11, 10, ((load.verbose, (cat, (cfg.watch), "load/*.torrent")))
 ## Add & download straight away
-schedule2 = watch_start, 10, 10, ((load.start_verbose, (cat, (cfg.watch), "start/*.torrent")))
+schedule = watch_start, 10, 10, ((load.start_verbose, (cat, (cfg.watch), "start/*.torrent")))
 
 
 ## Run the rTorrent process as a daemon in the background
 ## (and control via XMLRPC sockets)
-#system.daemon.set = true
+## system.daemon.set = true is always set by entrypoint.sh via Docker
 network.scgi.open_local = (cat,(cfg.basedir),rtorrent.sock)
 execute.nothrow = chmod,770,(cat,(cfg.basedir),rtorrent.sock)
 
