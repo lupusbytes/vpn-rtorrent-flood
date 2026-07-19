@@ -19,12 +19,12 @@ if [[ ! -f "/data/rtorrent.rc" ]]; then
 fi
 
 echo "Setting rTorrent incoming port to $INCOMING_PORT"
-grep -q "network.port_range.set" /data/rtorrent.rc
+grep -q "network.listen.port.set" /data/rtorrent.rc
 if [[ $? == 0 ]]; then
-    sed -i "s/network.port_range.set.*/network.port_range.set = $INCOMING_PORT-$INCOMING_PORT/g" /data/rtorrent.rc
+    sed -i "s/network.listen.port.set.*/network.listen.port.set = $INCOMING_PORT/g" /data/rtorrent.rc
 else
     sed -i "$ a ## Set the incoming port" /data/rtorrent.rc
-    sed -i "$ a network.port_range.set = $INCOMING_PORT-$INCOMING_PORT" /data/rtorrent.rc
+    sed -i "$ a network.listen.port.set = $INCOMING_PORT" /data/rtorrent.rc
 fi
 
 chown "$PUID":"$PGID" /data/rtorrent.rc

@@ -105,5 +105,5 @@ log.add_output = "info", "log"
 #log.add_output = "tracker_debug", "log"
 
 ## Set the incoming port
-network.port_random.set = no
-network.port_range.set = 50000-50000
+network.listen.port.random.set = no
+network.listen.port.set = 50000
