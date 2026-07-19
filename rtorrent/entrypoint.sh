@@ -23,6 +23,11 @@ if grep -q "^network\.port_random\.set" /data/rtorrent.rc; then
     sed -i "s/^network\.port_random\.set[[:space:]]*=\(.*\)$/network.listen.port.random.set =\1/g" /data/rtorrent.rc
 fi
 
+if grep -q "^network\.port_range\.set" /data/rtorrent.rc; then
+    echo "Migrating network.port_range.set to network.listen.port.set"
+    sed -i "s/^network\.port_range\.set[[:space:]]*=[[:space:]]*\([0-9]*\)-\([0-9]*\)[[:space:]]*$/network.listen.port.set = \1/g" /data/rtorrent.rc
+fi
+
 echo "Setting rTorrent incoming port to $INCOMING_PORT"
 grep -q "network.listen.port.set" /data/rtorrent.rc
 if [[ $? == 0 ]]; then
