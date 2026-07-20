@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v2.0.0...rtorrent@v2.1.0) (2026-07-20)
+
+
+### New features
+
+* **config:** add automatic migration from obsolete `network.port_random.set` to `network.listen.port.random.set` ([28cdc2c](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/28cdc2cbe88216bd85aa81396e73f96bce3e4752))
+* **config:** add automatic migration from obsolete `network.port_range.set` to `network.listen.port.set` ([208a58a](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/208a58a8df158329ddd43472ba1eef18f0824546))
+* **config:** use non-obsolete commands to set incoming port ([8e89237](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/8e89237cc7b3ae70667cd7ffb2bff6c60955af38))
+
+
+### Upgrades
+
+* **deps:** upgrade rtorrent to version 0.16.18 ([866e817](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/866e81713943175472a9182cde8bb99af59855c2))
+
 ## [2.0.0](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v1.4.14...rtorrent@v2.0.0) (2026-06-21)
 
 
