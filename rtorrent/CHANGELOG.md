@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.1](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v2.1.0...rtorrent@v2.1.1) (2026-10-22)
+
+
+### Upgrades
+
+* **deps:** update alpine docker tag to v3.24.3 ([86acdbe](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/86acdbe9efd21d79c56d5676c0ff86eb1b88e2bb))
+* **deps:** update rakshasa-rtorrent to 0.16.25 ([17fabdb](https://github.com/lupusbytes/vpn-rtorrent-flood/commit/17fabdba6c27cf996294b591acb14af399edd382))
+
 ## [2.1.0](https://github.com/lupusbytes/vpn-rtorrent-flood/compare/rtorrent@v2.0.0...rtorrent@v2.1.0) (2026-07-20)
 
 
