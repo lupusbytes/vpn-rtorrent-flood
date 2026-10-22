@@ -1,4 +1,4 @@
-FROM alpine:3.24.1 AS build
+FROM alpine:3.24.3 AS build
 ARG VERSION=0.16.18
 
 RUN apk add --no-cache \
@@ -41,7 +41,7 @@ RUN wget -O /tmp/rtorrent.tar.gz "https://github.com/rakshasa/rtorrent/archive/r
     && make install
 
 # Final stage/image (minimal rtorrent runtime)
-FROM alpine:3.24.1
+FROM alpine:3.24.3
 
 ENV USER=rtorrent
 ENV PUID=1000
